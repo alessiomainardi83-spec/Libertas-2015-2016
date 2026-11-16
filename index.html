@@ -119,6 +119,7 @@ var CAMPI={
 var GIRONI={E:{nome:"Esordienti",anno:"2015",girone:"Girone J · 1ª fase",url:"https://fip.it/risultati/?group=campionati-regionali&regione_codice=TO&comitato_codice=RTO&sesso=M&codice_campionato=ES&codice_fase=1&codice_girone=86109"},
             A:{nome:"Aquilotti Big",anno:"2016",girone:"Girone H · 1ª fase",url:"https://fip.it/risultati/?group=campionati-regionali&regione_codice=TO&comitato_codice=RTO&sesso=M&codice_campionato=TAQB&codice_fase=1&codice_girone=86422"}};
 /* una riga per gara: numero gara FIP|campionato (E/A)|data|ora|casa|ospite|punti casa|punti ospite|campo|giornata  (punti vuoti = da giocare) */
+/* SPOSTAMENTI concordati tra le societa', non ancora sui comunicati FIP (inseriti il 16/11/2026): gare 010675, 009824, 009835, 010697, 010704. Non riportarle ai vecchi dati FIP finche' FIP non pubblica lo spostamento; quando esce, vale FIP. */
 var RAW=[
 "009793|E|2026-10-25|15:00|LB|LI|12|4|PC|A1",
 "009795|E|2026-10-24|17:00|PI|CE|10|6|CU|A1",
@@ -143,7 +144,7 @@ var RAW=[
 "009819|E|2026-12-06|09:00|LI|DB|||VP|A7",
 "009822|E|2026-12-12|11:30|FO|DB|||FP|R1",
 "009823|E|2026-12-12|15:00|CE|PI|||MO|R1",
-"009824|E|2026-12-13|12:30|LI|LB|||CI|R1",
+"009824|E|2026-12-13|11:30|LI|LB|||GE|R1",
 "009826|E|2026-12-19|16:00|DO|LI|||DP|R2",
 "009827|E|2026-12-20|15:00|LB|FO|||PC|R2",
 "009828|E|2026-12-19|14:45|DB|CE|||PM|R2",
@@ -151,7 +152,7 @@ var RAW=[
 "009830|E|2027-01-09|17:00|PI|DB|||CU|R3",
 "009832|E|2027-01-10|11:00|CE|LB|||CZ|R3",
 "009833|E|2027-01-16|11:00|LB|PI|||DG|R4",
-"009835|E|2027-01-17|12:30|LI|FO|||CI|R4",
+"009835|E|2027-01-16|15:00|LI|FO|||CI|R4",
 "009836|E|2027-01-16|16:00|DO|CE|||DP|R4",
 "009838|E|2027-01-23|18:30|CE|LI|||CZ|R5",
 "009839|E|2027-01-24|17:30|DB|LB|||PM|R5",
@@ -174,7 +175,7 @@ var RAW=[
 "010672|A|2026-11-22|11:00|VO|DB|||VF|A4",
 "010673|A|2026-11-22|15:00|RO|LI|||CC|A4",
 "010674|A|2026-11-20|18:15|GH|SP|||GP|A4",
-"010675|A|2026-11-29|12:30|LI|VO|||CI|A5",
+"010675|A|2026-11-29|16:00|VO|LI|||VF|A5",
 "010676|A|2026-11-28|16:00|SP|RO|||PO|A5",
 "010677|A|2026-11-21|14:45|DB|LA|||PM|A5",
 "010678|A|2026-12-06|15:00|RO|GH|||CC|A6",
@@ -196,14 +197,14 @@ var RAW=[
 "010694|A|2027-01-24|18:45|DB|VO|||PM|R4",
 "010695|A|2027-01-23|16:00|SP|GH|||PO|R4",
 "010696|A|2027-01-30|15:00|RO|SP|||CC|R5",
-"010697|A|2027-01-31|11:00|VO|LI|||VF|R5",
+"010697|A|2027-01-31|11:30|LI|VO|||CI|R5",
 "010698|A|2027-01-30|12:30|LA|DB|||PC|R5",
 "010699|A|2027-02-07|09:00|GH|RO|||GP|R6",
 "010700|A|2027-02-07|12:30|LI|LA|||CI|R6",
 "010701|A|2026-12-05|16:00|SP|VO|||PO|R6",
 "010702|A|2027-02-14|11:00|VO|GH|||VF|R7",
 "010703|A|2027-02-14|17:00|LA|SP|||PC|R7",
-"010704|A|2027-02-07|17:30|DB|LI|||PM|R7"
+"010704|A|2027-02-12|14:45|DB|LI|||PM|R7"
 ];
 /* ====== FINE DATI ====== */
 
