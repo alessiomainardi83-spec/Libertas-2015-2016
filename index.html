@@ -46,6 +46,7 @@ section{display:flex;flex-direction:column;gap:10px;min-width:0}
 .badge.aq{background:var(--soft)}
 .badge.today{background:var(--brand);color:#fff}
 .badge.dbl{background:var(--warn-soft);color:var(--warn)}
+.badge.tor{background:#c9a227;color:#2a1218}
 .list{display:flex;flex-direction:column}
 .row{display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:center;padding:12px 14px;border-top:1px solid var(--line)}
 .month + .row{border-top:0}
@@ -98,6 +99,7 @@ footer{color:var(--muted);font-size:13px;text-align:center}
 var AGGIORNATO="2026-11-22";
 var SQUADRE={LI:"Libertas Academy",
  LB:"Livorno Basket Bianco",PI:"Pall. Piombino",CE:"Basket Cecina",DB:"Don Bosco Livorno",FO:"Follonica Basket",DO:"Basket Donoratico",
+ BB:"Baloncesto Firenze Bianca",BS:"BSL San Lazzaro",RN:"Squadra del Girone Renna (pari classificata)",XX:"Avversario da definire",
  VO:"Basket Volterra",RO:"Roosters PL Young",SP:"Sport Pisa I.E.S.",LA:"Livorno Basket Amaranto",GH:"Pol. Ghezzano"};
 var CAMPI={
  PC:"PalaCosmelli, Via Allende 11, Livorno",
@@ -115,8 +117,12 @@ var CAMPI={
  CC:"Palestra Cecioni, Via Zola, Livorno",
  PO:"Palestra Possenti, Via Possenti, Pisa",
  GP:"Palazzetto Comunale, Via Sartori 28, San Giuliano Terme",
- GE:"Palestra D'Alesio (Gemini), Via Oberdan Chiesa 66, Livorno"};
-var GIRONI={E:{nome:"Esordienti",anno:"2015",girone:"Girone J · 1ª fase",url:"https://fip.it/risultati/?group=campionati-regionali&regione_codice=TO&comitato_codice=RTO&sesso=M&codice_campionato=ES&codice_fase=1&codice_girone=86109"},
+ GE:"Palestra D'Alesio (Gemini), Via Oberdan Chiesa 66, Livorno",
+ MP:"Palestra Marco Polo, Firenze",
+ FQ:"Firenze · King, Buontalenti o Marco Polo secondo il piazzamento",
+ FS:"Firenze · stessa palestra del quarto (16:30 se si vince il quarto, 15:15 se si perde)",
+ FF:"Firenze · orario (8:30-12:00) e palestra secondo il piazzamento"};
+var GIRONI={T:{nome:"Torneo"},E:{nome:"Esordienti",anno:"2015",girone:"Girone J · 1ª fase",url:"https://fip.it/risultati/?group=campionati-regionali&regione_codice=TO&comitato_codice=RTO&sesso=M&codice_campionato=ES&codice_fase=1&codice_girone=86109"},
             A:{nome:"Aquilotti Big",anno:"2016",girone:"Girone H · 1ª fase",url:"https://fip.it/risultati/?group=campionati-regionali&regione_codice=TO&comitato_codice=RTO&sesso=M&codice_campionato=TAQB&codice_fase=1&codice_girone=86422"}};
 /* una riga per gara: numero gara FIP|campionato (E/A)|data|ora|casa|ospite|punti casa|punti ospite|campo|giornata  (punti vuoti = da giocare) */
 /* SPOSTAMENTI concordati tra le societa', non ancora sui comunicati FIP (inseriti il 16/11/2026): gare 010675, 009824, 009835, 010697, 010704. Non riportarle ai vecchi dati FIP finche' FIP non pubblica lo spostamento; quando esce, vale FIP. */
@@ -208,9 +214,17 @@ var RAW=[
 "010703|A|2027-02-14|17:00|LA|SP|||PC|R7",
 "010704|A|2027-02-13|14:45|DB|LI|||PM|R7"
 ];
+/* PARTITE DI TORNEO (Aquilotti Big 2016): stesso formato, campionato T, giornata = fase. Non contano in classifica. */
+var TORNEO=[
+"|T|2026-12-06|09:00|LI|BB|||MP|BBF Christmas Cup · girone",
+"|T|2026-12-06|14:15|BS|LI|||MP|BBF Christmas Cup · girone",
+"|T|2026-12-07|11:15|LI|RN|||FQ|BBF Christmas Cup · quarti",
+"|T|2026-12-07|15:15|LI|XX|||FS|BBF Christmas Cup · semifinale",
+"|T|2026-12-08|08:30|LI|XX|||FF|BBF Christmas Cup · finali"
+];
 /* ====== FINE DATI ====== */
 
-var P=RAW.map(function(s){var a=s.split("|");return{gara:a[0],c:a[1],data:a[2],ora:a[3],casa:a[4],osp:a[5],pc:a[6]===""?null:+a[6],po:a[7]===""?null:+a[7],campo:a[8],g:a[9]}});
+var P=RAW.concat(TORNEO).map(function(s){var a=s.split("|");return{gara:a[0],c:a[1],data:a[2],ora:a[3],casa:a[4],osp:a[5],pc:a[6]===""?null:+a[6],po:a[7]===""?null:+a[7],campo:a[8],g:a[9]}});
 var S={filter:"lib"};
 try{var f0=localStorage.getItem("lib1516-filter");if(f0&&["lib","aq","es","girone"].indexOf(f0)>=0)S.filter=f0}catch(e){}
 var MESI=["gen","feb","mar","apr","mag","giu","lug","ago","set","ott","nov","dic"];
@@ -224,9 +238,10 @@ function lungo(iso){var p=parts(iso);return p.g+" "+MESI_L[p.m]+" "+p.y}
 function isLib(p){return p.casa==="LI"||p.osp==="LI"}
 function played(p){return p.pc!==null&&p.po!==null}
 function sortP(a,b){return a.data.localeCompare(b.data)||a.ora.localeCompare(b.ora)}
-function gior(g){return (g.charAt(0)==="A"?"andata ":"ritorno ")+g.slice(1)}
+function gior(g){if(!/^[AR]\d+$/.test(g))return g;return (g.charAt(0)==="A"?"andata ":"ritorno ")+g.slice(1)}
 /* giorni con più di una partita Libertas (2015 + 2016) */
-var DOPPIE={};P.filter(isLib).forEach(function(p){DOPPIE[p.data]=(DOPPIE[p.data]||0)+1});
+var DOPPIE={};P.filter(isLib).forEach(function(p){var k=p.c==="E"?"E":"A";DOPPIE[p.data]=DOPPIE[p.data]||{};DOPPIE[p.data][k]=1});
+Object.keys(DOPPIE).forEach(function(d){DOPPIE[d]=Object.keys(DOPPIE[d]).length});
 
 function row(p,mode){var pr=parts(p.data),t=todayISO(),sc;
   if(played(p)){var cls="",lab="";
@@ -234,7 +249,7 @@ function row(p,mode){var pr=parts(p.data),t=todayISO(),sc;
     sc='<div class="score '+cls+'">'+p.pc+"-"+p.po+(lab?"<small>"+lab+"</small>":"")+"</div>"}
   else if(p.data<t)sc='<div class="score wait">risultato in attesa</div>';
   else sc='<div class="score todo">'+esc(p.ora)+"</div>";
-  var bd='<span class="badge '+(p.c==="A"?"aq":"")+'">'+GIRONI[p.c].nome+"</span>";
+  var bd=p.c==="T"?'<span class="badge tor">Torneo</span><span class="badge aq">Aquilotti Big</span>':'<span class="badge '+(p.c==="A"?"aq":"")+'">'+GIRONI[p.c].nome+"</span>";
   if(p.data===t)bd+='<span class="badge today">oggi</span>';
   if(mode==="cal"&&isLib(p)&&DOPPIE[p.data]>1)bd+='<span class="badge dbl">doppio impegno</span>';
   return '<div class="row"><div class="date"><span>'+pr.wd+"</span><b>"+pr.g+"</b><span>"+MESI[pr.m]+"</span></div>"+
@@ -243,14 +258,14 @@ function row(p,mode){var pr=parts(p.data),t=todayISO(),sc;
    (mode==="cal"?'<span class="where">'+esc(CAMPI[p.campo])+"</span>":"")+"</div>"+sc+"</div>"}
 
 function vPartite(mode){var f=S.filter,t=todayISO();
-  var ps=P.filter(function(p){if(f==="aq")return p.c==="A"&&isLib(p);if(f==="es")return p.c==="E"&&isLib(p);if(f==="lib")return isLib(p);return true});
+  var ps=P.filter(function(p){if(f==="aq")return (p.c==="A"||p.c==="T")&&isLib(p);if(f==="es")return p.c==="E"&&isLib(p);if(f==="lib")return isLib(p);return true});
   var list=mode==="cal"?ps.filter(function(p){return !played(p)&&p.data>=t}).sort(sortP)
                        :ps.filter(function(p){return played(p)||p.data<t}).sort(sortP).reverse();
   var h="",cur="";
   list.forEach(function(p){var pr=parts(p.data),k=MESI_L[pr.m]+" "+pr.y;if(k!==cur){cur=k;h+='<div class="month">'+k+"</div>"}h+=row(p,mode)});
   function fb(v,l){return '<button data-filter="'+v+'" aria-pressed="'+(f===v)+'">'+l+"</button>"}
   var nota=f==="girone"?"Tutte le partite dei due gironi, comprese quelle tra le altre squadre."
-    :mode==="cal"&&f==="lib"?"«Doppio impegno» segnala i giorni in cui giocano sia il 2015 sia il 2016.":"";
+    :mode==="cal"&&(f==="lib"||f==="aq")?"«Doppio impegno» segnala i giorni con più di una partita Libertas, comprese quelle di torneo. Le partite «Torneo» non contano in classifica.":"";
   return "<section><h2>"+(mode==="cal"?"Calendario":"Risultati")+"</h2>"+
    '<div class="filters">'+fb("lib","2015 + 2016")+fb("aq","Aquilotti Big")+fb("es","Esordienti")+fb("girone","Tutto il girone")+"</div>"+
    '<div class="card list">'+(h||'<div class="empty">'+(mode==="cal"?"Nessuna partita da giocare con questo filtro.":"Nessun risultato con questo filtro.")+"</div>")+"</div>"+
