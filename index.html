@@ -121,7 +121,7 @@ var GIRONI={E:{nome:"Esordienti",anno:"2015",girone:"Girone J · 1ª fase",url:"
 /* una riga per gara: numero gara FIP|campionato (E/A)|data|ora|casa|ospite|punti casa|punti ospite|campo|giornata  (punti vuoti = da giocare) */
 /* SPOSTAMENTI concordati tra le societa', non ancora sui comunicati FIP (inseriti il 16/11/2026): gare 010675, 009824, 009835, 010697, 010704. Non riportarle ai vecchi dati FIP finche' FIP non pubblica lo spostamento; quando esce, vale FIP. */
 /* RIPRISTINATA (comunicato dal genitore il 21/11/2026): gara 009812, Esordienti, Libertas-Cecina, si gioca come da FIP domenica 22/11/2026 ore 09:00 alla Palestra Oltremare. Il rinvio del 17/11 non vale piu'. */
-/* RINVIATA a data da destinarsi (comunicato il 20/11/2026): gara 010673, Aquilotti Big, Roosters PL Young-Libertas, era il 22/11/2026 ore 10:00 (Palestra Cecioni). Tolta dal programma: non rimetterla finche' FIP non pubblica una nuova data. */
+/* RECUPERO FIP (22/11/2026): gara 010673, Aquilotti Big, Libertas-Roosters, sabato 19/12/2026 ore 15:00 alla Palestra Oltremare (era 22/11 alla Cecioni, rinviata). Il ritorno 010693 diventa Roosters-Libertas, 24/01/2027 ore 12:30 alla Cecioni. */
 var RAW=[
 "009793|E|2026-10-25|15:00|LB|LI|12|4|PC|A1",
 "009795|E|2026-10-24|17:00|PI|CE|10|6|CU|A1",
@@ -175,10 +175,11 @@ var RAW=[
 "010670|A|2026-11-15|12:30|LI|GH|18|6|CI|A3",
 "010671|A|2026-11-15|14:00|LA|VO|18|6|PC|A3",
 "010672|A|2026-11-22|11:00|VO|DB|||VF|A4",
-"010674|A|2026-11-20|18:15|GH|SP|||GP|A4",
+"010673|A|2026-12-19|15:00|LI|RO|||OL|A4",
+"010674|A|2026-11-20|18:15|GH|SP|16|8|GP|A4",
 "010675|A|2026-11-29|16:00|VO|LI|||VF|A5",
 "010676|A|2026-11-28|16:00|SP|RO|||PO|A5",
-"010677|A|2026-11-21|14:45|DB|LA|||PM|A5",
+"010677|A|2026-11-21|14:45|DB|LA|13|11|PM|A5",
 "010678|A|2026-12-06|15:00|RO|GH|||CC|A6",
 "010679|A|2026-12-03|18:00|LA|LI|||PC|A6",
 "010680|A|2027-02-07|11:00|VO|SP|||VF|A6",
@@ -194,7 +195,7 @@ var RAW=[
 "010690|A|2027-01-17|09:00|GH|LI|||GP|R3",
 "010691|A|2027-01-17|11:00|VO|LA|||VF|R3",
 "010692|A|2027-01-16|15:00|RO|DB|||CC|R3",
-"010693|A|2027-01-24|12:30|LI|RO|||CI|R4",
+"010693|A|2027-01-24|12:30|RO|LI|||CC|R4",
 "010694|A|2027-01-24|18:45|DB|VO|||PM|R4",
 "010695|A|2027-01-23|16:00|SP|GH|||PO|R4",
 "010696|A|2027-01-30|15:00|RO|SP|||CC|R5",
