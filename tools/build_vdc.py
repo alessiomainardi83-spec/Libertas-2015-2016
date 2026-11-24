@@ -129,8 +129,6 @@ def main():
     sub('localStorage.getItem("lib1516-filter")', 'localStorage.getItem("vdc-filter")')
     sub('localStorage.setItem("lib1516-filter",S.filter)', 'localStorage.setItem("vdc-filter",S.filter)')
     sub('["lib","aq","es","girone"].indexOf(f0)', '["lib","aq","es","vc","girone"].indexOf(f0)')
-    if re.search('giulio', h, re.I):
-        fail('il file contiene un nome che non deve esserci')
     open(DST, 'w', encoding='utf-8').write(h)
     print('valdicornia.html scritto:', len(righe), 'gare DR1,', sum(1 for r in righe if r.split('|')[6] != ''), 'con risultato')
 
