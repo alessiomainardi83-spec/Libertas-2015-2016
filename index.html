@@ -79,8 +79,19 @@ tr.lib td{font-weight:700;background:var(--soft)}
 .tabhead b{font-family:var(--f-display);font-size:20px;text-transform:uppercase}
 .tabfoot{padding:8px 14px 12px}
 a{color:var(--lib)}
+.tor{padding:14px;display:flex;flex-direction:column;gap:6px}
+.tor b{font-size:18px}
+.tor .res{font-weight:600}
+.tor .line{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.tor h3{font-family:var(--f-display);font-weight:600;font-size:17px;text-transform:uppercase;letter-spacing:.04em;margin:8px 0 0}
+.tor ul{margin:0;padding-left:18px;font-size:15px}
+.tor table{font-size:14px;margin-top:2px}
+.tor td,.tor th{padding:6px 8px;text-align:left}
+.tor th:nth-child(2),.tor td:nth-child(2){text-align:left}
+.tor tr.lib td{background:var(--soft)}
+.badge.gold{background:#c9a227;color:#2a1218}
 footer{color:var(--muted);font-size:13px;text-align:center}
-@media (max-width:420px){.row{grid-template-columns:46px 1fr auto;gap:10px}nav.tabs a{font-size:17px}}
+@media (max-width:420px){.row{grid-template-columns:46px 1fr auto;gap:10px}nav.tabs .wrap{gap:0;padding-left:8px;padding-right:8px}nav.tabs a{font-size:14px;letter-spacing:0;padding-left:3px;padding-right:3px}}
 </style>
 </head>
 <body>
@@ -89,7 +100,7 @@ footer{color:var(--muted);font-size:13px;text-align:center}
   <div><h1>Libertas Livorno</h1><div class="sub">Aquilotti Big 2016 · Esordienti 2015 · stagione 2026/27</div></div>
 </div></header>
 <nav class="tabs" aria-label="Sezioni"><div class="wrap">
-  <a href="#calendario" data-v="calendario">Calendario</a><a href="#risultati" data-v="risultati">Risultati</a><a href="#classifiche" data-v="classifiche">Classifiche</a>
+  <a href="#calendario" data-v="calendario">Calendario</a><a href="#risultati" data-v="risultati">Risultati</a><a href="#classifiche" data-v="classifiche">Classifiche</a><a href="#tornei" data-v="tornei">Tornei</a>
 </div></nav>
 <main><div class="wrap" id="view"></div></main>
 
@@ -222,6 +233,27 @@ var TORNEO=[
 "|T|2026-12-07|15:15|LI|XX|||FS|BBF Christmas Cup · semifinale",
 "|T|2026-12-08|08:30|LI|XX|||FF|BBF Christmas Cup · finali"
 ];
+/* TORNEI (sezione Tornei). Per ora solo Aquilotti Big 2016; Esordienti 2015 da aggiungere quando arrivano. */
+var TORNEI_PROGRAMMA = [
+ {nome:"BBF Christmas Cup", periodo:"6-8 dicembre 2026", luogo:"Firenze · palestre King, Buontalenti, Marco Polo e Ambrosoli", info:"24 squadre in 8 gironi da 3. Libertas nel Girone Cometa 🌟 con Baloncesto Firenze Bianca e BSL San Lazzaro: domenica 6/12 ore 9:00 e 14:15 alla Marco Polo.",
+  prog:{
+   formula:["4 contro 4, 6 tempini da 5 minuti; a referto da 10 a 14 bambini","Tempo a correre; cambi nel tempino solo per infortunio o 5 falli; palla contesa con la freccia","In parità di tempini vale il punteggio progressivo; se ancora pari, Golden Basket: vince il primo canestro (o i due liberi)"],
+   gironi:[["Babbo Natale 🎅","Lucca Sky Walkers · Union Basket · Terranuova Basket"],["Albero 🎄","US Livorno · Baloncesto Firenze Viola · Pall. Nuoro Sirbones"],["Fiocco ❄","Etruria Bk Project · ABC Castelfiorentino · UISP XVIII Roma"],["Pupazzo ⛄","Pontedera Bk JB · Basket Reggello · Scuola Basket Arezzo"],["Renna 🦌","Don Bosco Livorno · Pino Basket Firenze · Virtus Basket Binasco"],["Regalo 🎁","Basket Calcinaia · Freccia Azzurra Firenze · Collegno Basket"],["Cometa 🌟","Libertas Livorno · Baloncesto Firenze Bianca · BSL San Lazzaro"],["Biscotto 🍪","BCL Lucca · Laurenziana Bk Firenze · Mugello 88"]],
+   girone:[["09:00","Libertas Livorno – Baloncesto Firenze Bianca",true],["11:30","Baloncesto Firenze Bianca – BSL San Lazzaro",false],["14:15","BSL San Lazzaro – Libertas Livorno",true]],
+   percorso:[["1ª","Palestra King","1°-8° posto"],["2ª","Palestra Buontalenti","9°-16° posto"],["3ª","Palestra Marco Polo","17°-24° posto"]],
+   finali:[["1°-2°","12:00","King"],["3°-4°","10:30","King"],["5°-6°","9:00","King"],["7°-8°","11:00","Buontalenti"],["9°-10°","9:45","Buontalenti"],["11°-12°","8:30","Buontalenti"],["13°-14°","11:00","Marco Polo"],["15°-16°","9:45","Marco Polo"],["17°-18°","8:30","Marco Polo"],["19°-20°","11:00","Ambrosoli"],["21°-22°","9:45","Ambrosoli"],["23°-24°","8:30","Ambrosoli"]]
+  }},
+ {nome:"Torneo di Natale · Memorial Paolo Calviani", periodo:"27-29 dicembre 2026", luogo:"Terranuova Bracciolini (AR)", info:"Programma 2026 non ancora pubblicato dagli organizzatori (l'ultima edizione è stata la 34ª, nel 2025)."}
+];
+var TORNEI_STORICO = [
+ {nome:"Trofeo Mantovani", periodo:"8 dicembre 2025", luogo:"Palestra Gemini, Livorno", risultato:"1° posto", top:true},
+ {nome:"Befana Cup", periodo:"Gennaio 2026", luogo:"Firenze", risultato:"2° posto"},
+ {nome:"Torneo di Volterra", periodo:"Stagione 2025/26", luogo:"Volterra (PI)", risultato:"Finalista"},
+ {nome:"Torneo di San Miniato", periodo:"Stagione 2025/26", luogo:"San Miniato (PI)", risultato:"1° posto", top:true},
+ {nome:"Torneo Sancat", periodo:"Stagione 2025/26", luogo:"Firenze", risultato:"7° posto"},
+ {nome:"Quadrangolare di Via Pera", periodo:"Giugno 2026", luogo:"Palestra Via Pera, Livorno", risultato:"1° posto", top:true}
+];
+var TORNEI_2015=[];
 /* ====== FINE DATI ====== */
 
 var P=RAW.concat(TORNEO).map(function(s){var a=s.split("|");return{gara:a[0],c:a[1],data:a[2],ora:a[3],casa:a[4],osp:a[5],pc:a[6]===""?null:+a[6],po:a[7]===""?null:+a[7],campo:a[8],g:a[9]}});
@@ -283,11 +315,31 @@ function vClass(){return ["A","E"].map(function(c){var G=GIRONI[c],r=classifica(
   r.map(function(x,i){return '<tr class="'+(x.k==="LI"?"lib":"")+'"><td>'+(i+1)+"</td><td>"+esc(SQUADRE[x.k])+"</td><td>"+x.pt+"</td><td>"+x.g+"</td><td>"+x.v+"</td><td>"+x.p+"</td></tr>"}).join("")+
   '</tbody></table></div><p class="note tabfoot">2 punti a vittoria, calcolata sui risultati inseriti. <a href="'+esc(G.url)+'" target="_blank" rel="noopener">Pagina FIP</a></p></div></section>'}).join("")}
 
-function route(){var v=(location.hash||"#calendario").slice(1);return ["calendario","risultati","classifiche"].indexOf(v)>=0?v:"calendario"}
+function torCard(t){return '<div class="card tor"><div class="line"><span class="badge '+(t.risultato?"":"aq")+'">'+esc(t.periodo)+'</span></div><b>'+esc(t.nome)+'</b><span class="note">'+esc(t.luogo)+'</span>'+
+  (t.formula?'<span class="note">'+esc(t.formula)+'</span>':"")+
+  (t.risultato?'<span class="line">'+(t.top?'<span class="badge gold">🏆</span>':"")+'<span class="res">'+esc(t.risultato)+'</span></span>':"")+
+  (t.dettaglio?'<span class="note">'+esc(t.dettaglio)+'</span>':"")+(t.info?'<span class="note">'+esc(t.info)+'</span>':"")+'</div>'}
+function tbl(rows,head,libf){return '<div class="tablewrap"><table>'+(head?'<thead><tr>'+head.map(function(x){return "<th>"+esc(x)+"</th>"}).join("")+'</tr></thead>':"")+'<tbody>'+
+  rows.map(function(r){return '<tr class="'+(libf&&libf(r)?"lib":"")+'">'+r.filter(function(x){return typeof x!=="boolean"}).map(function(x){return "<td>"+esc(x)+"</td>"}).join("")+'</tr>'}).join("")+'</tbody></table></div>'}
+function progCard(t){var g=t.prog;return '<div class="card tor"><div class="line"><span class="badge aq">'+esc(t.periodo)+'</span></div><b>'+esc(t.nome)+'</b><span class="note">'+esc(t.luogo)+'</span>'+
+  '<h3>Girone Cometa 🌟 · domenica 6 dicembre · Palestra Marco Polo</h3>'+tbl(g.girone,null,function(r){return r[2]})+
+  '<span class="note">Nel minibasket conta il numero di tempini vinti. La classifica del girone decide il percorso di lunedì e martedì.</span>'+
+  '<h3>Quarti e semifinali · lunedì 7 dicembre</h3><span class="note">Quarti alle 11:15 contro la pari classificata del Girone Renna 🦌 (Don Bosco Livorno, Pino Basket Firenze, Virtus Basket Binasco). Semifinali nella stessa palestra: alle 16:30 se si vince il quarto, alle 15:15 se si perde.</span>'+
+  tbl(g.percorso,["Nel girone","Palestra","Si gioca per"])+
+  '<h3>Finali · martedì 8 dicembre</h3>'+tbl(g.finali,["Posto","Ora","Palestra"])+
+  '<span class="note">Premiazioni martedì 8/12 alle 13:00 alla King. Lunedì 7/12 dalle 14:30 alle 15:00, sempre alla King, c\'è la Food &amp; Hoop Challenge.</span>'+
+  '<h3>Regole</h3><ul>'+g.formula.map(function(x){return "<li>"+esc(x)+"</li>"}).join("")+'</ul>'+
+  '<h3>Tutti i gironi</h3>'+tbl(g.gironi,null,function(r){return /Cometa/.test(r[0])})+'</div>'}
+function vTornei(){return '<section><h2>Aquilotti Big 2016 · in programma 2026/27</h2>'+TORNEI_PROGRAMMA.map(function(t){return t.prog?progCard(t):torCard(t)}).join("")+
+  '<p class="note">Le partite dei tornei sono anche nel Calendario, segnate «Torneo». Non contano in classifica.</p></section>'+
+  '<section><h2>Aquilotti Big 2016 · stagione 2025/26</h2>'+TORNEI_STORICO.map(torCard).join("")+'</section>'+
+  '<section><h2>Esordienti 2015</h2>'+(TORNEI_2015.length?TORNEI_2015.map(torCard).join(""):'<div class="card"><div class="empty">Nessun torneo in programma per ora.</div></div>')+'</section>'}
+
+function route(){var v=(location.hash||"#calendario").slice(1);return ["calendario","risultati","classifiche","tornei"].indexOf(v)>=0?v:"calendario"}
 function render(){var v=route();
   Array.prototype.forEach.call(document.querySelectorAll("nav.tabs a"),function(a){a.setAttribute("aria-current",a.dataset.v===v?"page":"false")});
-  var h=v==="calendario"?vPartite("cal"):v==="risultati"?vPartite("ris"):vClass();
-  h+="<footer>Aggiornato al "+lungo(AGGIORNATO)+" · dati FIP Toscana. Gli ultimi risultati possono essere in attesa di conferma ufficiale.</footer>";
+  var h=v==="calendario"?vPartite("cal"):v==="risultati"?vPartite("ris"):v==="tornei"?vTornei():vClass();
+  h+="<footer>Aggiornato al "+lungo(AGGIORNATO)+" · dati FIP Toscana e organizzatori dei tornei. Gli ultimi risultati possono essere in attesa di conferma ufficiale.</footer>";
   document.getElementById("view").innerHTML=h}
 document.addEventListener("click",function(e){var t=e.target.closest("[data-filter]");if(!t)return;S.filter=t.dataset.filter;try{localStorage.setItem("lib1516-filter",S.filter)}catch(e){}render()});
 window.addEventListener("hashchange",function(){render();window.scrollTo(0,0)});
