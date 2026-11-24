@@ -271,7 +271,7 @@ function isLib(p){return p.casa==="LI"||p.osp==="LI"}
 function played(p){return p.pc!==null&&p.po!==null}
 function sortP(a,b){return a.data.localeCompare(b.data)||a.ora.localeCompare(b.ora)}
 function gior(g){if(!/^[AR]\d+$/.test(g))return g;return (g.charAt(0)==="A"?"andata ":"ritorno ")+g.slice(1)}
-/* giorni con più di una partita Libertas (2015 + 2016) */
+/* doppio impegno = nello stesso giorno giocano sia gli Esordienti (E) sia gli Aquilotti (A o torneo T); più partite della stessa categoria non contano */
 var DOPPIE={};P.filter(isLib).forEach(function(p){var k=p.c==="E"?"E":"A";DOPPIE[p.data]=DOPPIE[p.data]||{};DOPPIE[p.data][k]=1});
 Object.keys(DOPPIE).forEach(function(d){DOPPIE[d]=Object.keys(DOPPIE[d]).length});
 
@@ -297,7 +297,7 @@ function vPartite(mode){var f=S.filter,t=todayISO();
   list.forEach(function(p){var pr=parts(p.data),k=MESI_L[pr.m]+" "+pr.y;if(k!==cur){cur=k;h+='<div class="month">'+k+"</div>"}h+=row(p,mode)});
   function fb(v,l){return '<button data-filter="'+v+'" aria-pressed="'+(f===v)+'">'+l+"</button>"}
   var nota=f==="girone"?"Tutte le partite dei due gironi, comprese quelle tra le altre squadre."
-    :mode==="cal"&&(f==="lib"||f==="aq")?"«Doppio impegno» segnala i giorni con più di una partita Libertas, comprese quelle di torneo. Le partite «Torneo» non contano in classifica.":"";
+    :mode==="cal"&&(f==="lib"||f==="aq")?"«Doppio impegno» segnala solo i giorni in cui giocano sia gli Esordienti 2015 sia gli Aquilotti Big 2016 (anche se gli Aquilotti sono a un torneo). Più partite dello stesso torneo nello stesso giorno non sono un doppio impegno. Le partite «Torneo» non contano in classifica.":"";
   return "<section><h2>"+(mode==="cal"?"Calendario":"Risultati")+"</h2>"+
    '<div class="filters">'+fb("lib","2015 + 2016")+fb("aq","Aquilotti Big")+fb("es","Esordienti")+fb("girone","Tutto il girone")+"</div>"+
    '<div class="card list">'+(h||'<div class="empty">'+(mode==="cal"?"Nessuna partita da giocare con questo filtro.":"Nessun risultato con questo filtro.")+"</div>")+"</div>"+
