@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Libertas 2015·2016 + Philos</title>
+<link rel="icon" href="data:image/jpeg;base64,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">
+<link rel="apple-touch-icon" href="data:image/jpeg;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+:root{
+  --bg:#f6f3f4; --surface:#ffffff; --line:#e6dde0; --ink:#231519; --muted:#6f5d63;
+  --brand:#7d1531; --brand-ink:#ffffff; --soft:#f6e1e6; --chip:#efe7ea; --lib:#7d1531;
+  --win:#1f7a4d; --loss:#b4372f; --warn:#b25a00; --warn-soft:#fdebd3;
+  --f-display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --f-body:"Source Sans 3","Segoe UI",Roboto,Arial,sans-serif;
+  --r:12px;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#150e10; --surface:#21171a; --line:#3a2a2f; --ink:#f3e9ec; --muted:#b9a5ab;
+  --brand:#7d1531; --soft:#42202a; --chip:#33252a; --lib:#ff9db3;
+  --win:#5cc78f; --loss:#ef7d73; --warn:#ffb866; --warn-soft:#4a3114; color-scheme:dark}}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg)}
+body{color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.45}
+.wrap{max-width:720px;margin:0 auto;padding-left:16px;padding-right:16px}
+header.top{background:var(--brand);color:var(--brand-ink)}
+header.top .wrap{padding-top:18px;padding-bottom:14px;display:flex;align-items:center;gap:14px}
+.ball{width:52px;height:52px;flex:none;border-radius:12px;background:#fff;display:block}
+h1{font-family:var(--f-display);font-weight:700;font-size:32px;line-height:1;margin:0;letter-spacing:.01em;text-transform:uppercase}
+.sub{font-size:14px;opacity:.88;margin-top:3px}
+nav.tabs{position:sticky;top:0;z-index:5;background:var(--brand);border-top:1px solid rgba(255,255,255,.18)}
+nav.tabs .wrap{display:flex;gap:4px}
+nav.tabs a{flex:1;text-align:center;color:var(--brand-ink);opacity:.75;text-decoration:none;font-family:var(--f-display);font-weight:600;font-size:18px;letter-spacing:.04em;text-transform:uppercase;padding:10px 6px 9px;border-bottom:3px solid transparent;white-space:nowrap}
+nav.tabs a[aria-current="page"]{opacity:1;border-bottom-color:#fff}
+nav.tabs a:focus-visible{outline:2px solid #fff;outline-offset:-2px}
+main .wrap{padding-top:18px;padding-bottom:48px;display:flex;flex-direction:column;gap:22px}
+h2{font-family:var(--f-display);font-weight:600;font-size:21px;text-transform:uppercase;letter-spacing:.04em;margin:0;color:var(--muted)}
+section{display:flex;flex-direction:column;gap:10px;min-width:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.note{color:var(--muted);font-size:14px;margin:0}
+.empty{padding:18px;color:var(--muted);font-size:15px}
+.badge{display:inline-flex;align-items:center;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:999px;background:var(--chip);color:var(--ink);white-space:nowrap}
+.badge.aq{background:var(--soft)}
+.badge.today{background:var(--brand);color:#fff}
+.badge.dbl{background:var(--warn-soft);color:var(--warn)}
+.badge.tor{background:#c9a227;color:#2a1218}
+.list{display:flex;flex-direction:column}
+.row{display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:center;padding:12px 14px;border-top:1px solid var(--line)}
+.month + .row{border-top:0}
+.date{font-family:var(--f-display);text-align:center;line-height:1}
+.date b{display:block;font-size:26px;font-weight:700}
+.date span{display:block;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.teams{min-width:0;display:flex;flex-direction:column;gap:3px}
+.teams .t{font-weight:600;overflow-wrap:anywhere}
+.teams .t.lib{color:var(--lib)}
+.meta{font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.where{font-size:13px;color:var(--muted);overflow-wrap:anywhere}
+.score{font-family:var(--f-display);font-weight:700;font-size:24px;font-variant-numeric:tabular-nums;text-align:right;line-height:1}
+.score small{display:block;font-size:12px;font-weight:600;letter-spacing:.06em;margin-top:4px}
+.score.w small{color:var(--win)} .score.l small{color:var(--loss)}
+.score.todo{font-size:20px;color:var(--ink)}
+.score.wait{font-size:13px;color:var(--muted);font-family:var(--f-body);font-weight:600;max-width:70px}
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.filters button{font:inherit;font-size:14px;font-weight:600;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:7px 12px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--brand);color:#fff;border-color:var(--brand)}
+.filters button:focus-visible{outline:2px solid var(--lib);outline-offset:2px}
+.month{font-family:var(--f-display);font-weight:600;font-size:15px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding:10px 14px 4px;border-top:1px solid var(--line);background:var(--bg)}
+.month:first-child{border-top:0}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:15px}
+th,td{padding:8px 10px;text-align:right;border-top:1px solid var(--line)}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);border-top:0}
+th:nth-child(2),td:nth-child(2){text-align:left}
+tr.lib td{font-weight:700;background:var(--soft)}
+.tabhead{padding:12px 14px 4px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:baseline}
+.tabhead b{font-family:var(--f-display);font-size:20px;text-transform:uppercase}
+.tabfoot{padding:8px 14px 12px}
+a{color:var(--lib)}
+.tor{padding:14px;display:flex;flex-direction:column;gap:6px}
+.tor b{font-size:18px}
+.tor .res{font-weight:600}
+.tor .line{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.tor h3{font-family:var(--f-display);font-weight:600;font-size:17px;text-transform:uppercase;letter-spacing:.04em;margin:8px 0 0}
+.tor ul{margin:0;padding-left:18px;font-size:15px}
+.tor table{font-size:14px;margin-top:2px}
+.tor td,.tor th{padding:6px 8px;text-align:left}
+.tor th:nth-child(2),.tor td:nth-child(2){text-align:left}
+.tor tr.lib td{background:var(--soft)}
+.badge.ph{background:#1d6b3a;color:#fff}
+.teams .t.ph{color:#1d6b3a}
+@media (prefers-color-scheme: dark){.badge.ph{background:#2f9457}.teams .t.ph{color:#8fdcab}}
+.badge.gold{background:#c9a227;color:#2a1218}
+footer{color:var(--muted);font-size:13px;text-align:center}
+@media (max-width:420px){.row{grid-template-columns:46px 1fr auto;gap:10px}nav.tabs .wrap{gap:0;padding-left:8px;padding-right:8px}nav.tabs a{font-size:14px;letter-spacing:0;padding-left:3px;padding-right:3px}}
+@media (max-width:420px){nav.tabs a{font-size:12.5px;padding-left:2px;padding-right:2px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <img class="ball" src="data:image/jpeg;base64,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" alt="Logo Libertas Livorno">
+  <div><h1>Libertas Livorno</h1><div class="sub">Aquilotti Big 2016 · Esordienti 2015 · Philos DR3 · 2026/27</div></div>
+</div></header>
+<nav class="tabs" aria-label="Sezioni"><div class="wrap">
+  <a href="#calendario" data-v="calendario">Calendario</a><a href="#risultati" data-v="risultati">Risultati</a><a href="#classifiche" data-v="classifiche">Classifiche</a><a href="#tornei" data-v="tornei">Tornei</a><a href="#philos" data-v="philos">Philos</a>
+</div></nav>
+<main><div class="wrap" id="view"></div></main>
+
+<script>
+(function(){
+/* ====== DATI (da aggiornare qui) ====== */
+var AGGIORNATO="2026-11-26";
+var SQUADRE={LI:"Libertas Academy",
+ LB:"US Livorno Basket Bianco",PI:"Pall. Piombino",CE:"Basket Cecina",DB:"Don Bosco Livorno",FO:"Follonica Basket",DO:"Basket Donoratico",
+ BB:"Baloncesto Firenze Bianca",BS:"BSL San Lazzaro",RN:"Squadra del Girone Renna (pari classificata)",XX:"Avversario da definire",
+ VO:"Basket Volterra",RO:"Roosters PL Young",SP:"Sport Pisa I.E.S.",LA:"US Livorno Basket Amaranto",GH:"Pol. Ghezzano"};
+var CAMPI={
+ PC:"PalaCosmelli, Via Allende 11, Livorno",
+ CU:"Palestra Cubo, Via della Resistenza, Piombino",
+ PM:"PalaMacchia, Via Allende 2, Livorno",
+ CZ:"Palazzetto, Via Toscana, Cecina",
+ FP:"PalaGolfo Raul Micheli, Via Sanzio, Follonica",
+ VP:"Palestra Via Pera, Via Pera 20, Livorno",
+ DG:"Palestra De Gubernatis, Via Cecconi 40, Livorno",
+ DP:"Palestra Comunale, Piazzale Europa, Donoratico",
+ OL:"Palestra Villaggio Oltremare, Via delle Sorgenti 213, Livorno",
+ MO:"Palestra scolastica, Via Roma, Montescudaio",
+ CI:"Palestra Cianfrini, Via Lambruschini 5, Livorno",
+ VF:"Palestra, Via Fonda, Volterra",
+ CC:"Palestra Cecioni, Via Zola, Livorno",
+ PO:"Palestra Possenti, Via Possenti, Pisa",
+ GP:"Palazzetto Comunale, Via Sartori 28, San Giuliano Terme",
+ GE:"Palestra D'Alesio (Gemini), Via Oberdan Chiesa 66, Livorno",
+ MP:"Palestra Marco Polo, Firenze",
+ FQ:"Firenze · King, Buontalenti o Marco Polo secondo il piazzamento",
+ FS:"Firenze · stessa palestra del quarto (16:30 se si vince il quarto, 15:15 se si perde)",
+ FF:"Firenze · orario (8:30-12:00) e palestra secondo il piazzamento"};
+var GIRONI={T:{nome:"Torneo"},E:{nome:"Esordienti",anno:"2015",girone:"Girone J · 1ª fase",url:"https://fip.it/risultati/?group=campionati-regionali&regione_codice=TO&comitato_codice=RTO&sesso=M&codice_campionato=ES&codice_fase=1&codice_girone=86109"},
+            A:{nome:"Aquilotti Big",anno:"2016",girone:"Girone H · 1ª fase",url:"https://fip.it/risultati/?group=campionati-regionali&regione_codice=TO&comitato_codice=RTO&sesso=M&codice_campionato=TAQB&codice_fase=1&codice_girone=86422"}};
+/* una riga per gara: numero gara FIP|campionato (E/A)|data|ora|casa|ospite|punti casa|punti ospite|campo|giornata  (punti vuoti = da giocare) */
+/* SPOSTAMENTI concordati tra le societa', non ancora sui comunicati FIP (inseriti il 16/11/2026): gare 010675, 009824, 009835, 010697, 010704; 010679 spostata al 30/11 ore 17:45 in Via Cecconi (inserita il 26/11/2026). Non riportarle ai vecchi dati FIP finche' FIP non pubblica lo spostamento; quando esce, vale FIP. */
+/* RIPRISTINATA (comunicato dal genitore il 21/11/2026): gara 009812, Esordienti, Libertas-Cecina, si gioca come da FIP domenica 22/11/2026 ore 09:00 alla Palestra Oltremare. Il rinvio del 17/11 non vale piu'. */
+/* RECUPERO FIP (22/11/2026): gara 010673, Aquilotti Big, Libertas-Roosters, sabato 19/12/2026 ore 15:00 alla Palestra Oltremare (era 22/11 alla Cecioni, rinviata). Il ritorno 010693 diventa Roosters-Libertas, 24/01/2027 ore 12:30 alla Cecioni. */
+var RAW=[
+"009793|E|2026-10-25|15:00|LB|LI|12|4|PC|A1",
+"009795|E|2026-10-24|17:00|PI|CE|10|6|CU|A1",
+"009796|E|2026-10-24|11:15|DB|FO|12|4|PM|A1",
+"009797|E|2026-12-05|18:30|CE|DB|||CZ|A2",
+"009798|E|2026-11-11|18:45|FO|LB|4|12|FP|A2",
+"009799|E|2026-11-01|09:00|LI|DO|9|7|VP|A2",
+"009801|E|2026-11-07|14:45|DB|PI|7|9|PM|A3",
+"009802|E|2026-11-16|16:30|LB|CE|12|4|DG|A3",
+"009803|E|2026-11-08|09:30|DO|FO|10|6|DP|A3",
+"009805|E|2026-11-14|17:00|PI|LB|6|10|CU|A4",
+"009807|E|2026-11-14|19:00|CE|DO|10|6|CZ|A4",
+"009808|E|2026-11-14|15:30|FO|LI|5|11|FP|A4",
+"009810|E|2026-11-22|17:00|LB|DB|12|4|DG|A5",
+"009811|E|2026-11-23|19:30|DO|PI|4|12|DP|A5",
+"009812|E|2026-11-22|09:00|LI|CE|10|6|OL|A5",
+"009813|E|2027-01-17|17:30|DB|DO|||PM|A6",
+"009815|E|2026-11-28|11:00|CE|FO|||CZ|A6",
+"009816|E|2026-11-28|17:00|PI|LI|||CU|A6",
+"009817|E|2026-12-05|15:30|FO|PI|||FP|A7",
+"009818|E|2026-12-05|18:30|DO|LB|||DP|A7",
+"009819|E|2026-12-06|09:00|LI|DB|||VP|A7",
+"009822|E|2026-12-12|11:30|FO|DB|||FP|R1",
+"009823|E|2026-12-12|15:00|CE|PI|||MO|R1",
+"009824|E|2026-12-13|11:30|LI|LB|||GE|R1",
+"009826|E|2026-12-19|16:00|DO|LI|||DP|R2",
+"009827|E|2026-12-20|15:00|LB|FO|||PC|R2",
+"009828|E|2026-12-19|14:45|DB|CE|||PM|R2",
+"009829|E|2027-01-09|18:30|FO|DO|||FP|R3",
+"009830|E|2027-01-09|17:00|PI|DB|||CU|R3",
+"009832|E|2027-01-10|11:00|CE|LB|||CZ|R3",
+"009833|E|2027-01-16|11:00|LB|PI|||DG|R4",
+"009835|E|2027-01-16|15:00|LI|FO|||CI|R4",
+"009836|E|2027-01-16|16:00|DO|CE|||DP|R4",
+"009838|E|2027-01-23|18:30|CE|LI|||CZ|R5",
+"009839|E|2027-01-24|17:30|DB|LB|||PM|R5",
+"009840|E|2027-01-23|17:00|PI|DO|||CU|R5",
+"009841|E|2027-01-31|12:30|LI|PI|||CI|R6",
+"009842|E|2027-01-30|16:00|DO|DB|||DP|R6",
+"009843|E|2027-01-30|15:30|FO|CE|||FP|R6",
+"009846|E|2027-02-07|17:00|LB|DO|||PC|R7",
+"009847|E|2027-02-06|16:00|DB|LI|||PM|R7",
+"009848|E|2027-02-03|17:45|PI|FO|||CU|R7",
+"010663|A|2026-11-07|18:30|VO|RO|18|6|VF|A1",
+"010664|A|2027-01-18|19:00|DB|SP|||PM|A1",
+"010665|A|2026-11-04|18:00|LA|GH|18|6|PC|A1",
+"010666|A|2026-11-13|17:00|RO|LA|6|18|CC|A2",
+"010667|A|2026-11-07|16:00|SP|LI|6|18|PO|A2",
+"010668|A|2026-11-11|18:15|GH|DB|6|18|GP|A2",
+"010669|A|2026-11-14|11:15|DB|RO|18|6|PM|A3",
+"010670|A|2026-11-15|12:30|LI|GH|18|6|CI|A3",
+"010671|A|2026-11-15|14:00|LA|VO|18|6|PC|A3",
+"010672|A|2026-11-22|11:00|VO|DB|7|17|VF|A4",
+"010673|A|2026-12-19|15:00|LI|RO|||OL|A4",
+"010674|A|2026-11-20|18:15|GH|SP|16|8|GP|A4",
+"010675|A|2026-11-29|16:00|VO|LI|||VF|A5",
+"010676|A|2026-11-28|16:00|SP|RO|||PO|A5",
+"010677|A|2026-11-21|14:45|DB|LA|13|11|PM|A5",
+"010678|A|2026-12-06|15:00|RO|GH|||CC|A6",
+"010679|A|2026-11-30|17:45|LA|LI|||DG|A6",
+"010680|A|2027-02-07|11:00|VO|SP|||VF|A6",
+"010681|A|2026-12-10|19:00|SP|LA|||PO|A7",
+"010682|A|2026-12-13|09:30|LI|DB|||GE|A7",
+"010683|A|2026-12-13|16:00|GH|VO|||GP|A7",
+"010684|A|2026-12-19|15:00|GH|LA|||GP|R1",
+"010685|A|2026-12-20|15:00|RO|VO|||CC|R1",
+"010686|A|2026-12-19|18:30|SP|DB|||PO|R1",
+"010687|A|2027-01-10|10:15|DB|GH|||PM|R2",
+"010688|A|2027-01-10|12:30|LI|SP|||CI|R2",
+"010689|A|2027-01-09|12:30|LA|RO|||PC|R2",
+"010690|A|2027-01-17|09:00|GH|LI|||GP|R3",
+"010691|A|2027-01-17|11:00|VO|LA|||VF|R3",
+"010692|A|2027-01-16|15:00|RO|DB|||CC|R3",
+"010693|A|2027-01-24|12:30|RO|LI|||CC|R4",
+"010694|A|2027-01-24|18:45|DB|VO|||PM|R4",
+"010695|A|2027-01-23|16:00|SP|GH|||PO|R4",
+"010696|A|2027-01-30|15:00|RO|SP|||CC|R5",
+"010697|A|2027-01-31|11:30|LI|VO|||CI|R5",
+"010698|A|2027-01-30|12:30|LA|DB|||PC|R5",
+"010699|A|2027-02-07|09:00|GH|RO|||GP|R6",
+"010700|A|2027-02-07|12:30|LI|LA|||CI|R6",
+"010701|A|2026-12-05|16:00|SP|VO|||PO|R6",
+"010702|A|2027-02-14|11:00|VO|GH|||VF|R7",
+"010703|A|2027-02-14|17:00|LA|SP|||PC|R7",
+"010704|A|2027-02-13|14:45|DB|LI|||PM|R7"
+];
+/* PARTITE DI TORNEO (Aquilotti Big 2016): stesso formato, campionato T, giornata = fase. Non contano in classifica. */
+var TORNEO=[
+"|T|2026-12-06|09:00|LI|BB|||MP|BBF Christmas Cup · girone",
+"|T|2026-12-06|14:15|BS|LI|||MP|BBF Christmas Cup · girone",
+"|T|2026-12-07|11:15|LI|RN|||FQ|BBF Christmas Cup · quarti",
+"|T|2026-12-07|15:15|LI|XX|||FS|BBF Christmas Cup · semifinale",
+"|T|2026-12-08|08:30|LI|XX|||FF|BBF Christmas Cup · finali"
+];
+/* TORNEI (sezione Tornei). Per ora solo Aquilotti Big 2016; Esordienti 2015 da aggiungere quando arrivano. */
+var TORNEI_PROGRAMMA = [
+ {nome:"BBF Christmas Cup", periodo:"6-8 dicembre 2026", luogo:"Firenze · palestre King, Buontalenti, Marco Polo e Ambrosoli", info:"24 squadre in 8 gironi da 3. Libertas nel Girone Cometa 🌟 con Baloncesto Firenze Bianca e BSL San Lazzaro: domenica 6/12 ore 9:00 e 14:15 alla Marco Polo.",
+  prog:{
+   formula:["4 contro 4, 6 tempini da 5 minuti; a referto da 10 a 14 bambini","Tempo a correre; cambi nel tempino solo per infortunio o 5 falli; palla contesa con la freccia","In parità di tempini vale il punteggio progressivo; se ancora pari, Golden Basket: vince il primo canestro (o i due liberi)"],
+   gironi:[["Babbo Natale 🎅","Lucca Sky Walkers · Union Basket · Terranuova Basket"],["Albero 🎄","US Livorno · Baloncesto Firenze Viola · Pall. Nuoro Sirbones"],["Fiocco ❄","Etruria Bk Project · ABC Castelfiorentino · UISP XVIII Roma"],["Pupazzo ⛄","Pontedera Bk JB · Basket Reggello · Scuola Basket Arezzo"],["Renna 🦌","Don Bosco Livorno · Pino Basket Firenze · Virtus Basket Binasco"],["Regalo 🎁","Basket Calcinaia · Freccia Azzurra Firenze · Collegno Basket"],["Cometa 🌟","Libertas Livorno · Baloncesto Firenze Bianca · BSL San Lazzaro"],["Biscotto 🍪","BCL Lucca · Laurenziana Bk Firenze · Mugello 88"]],
+   girone:[["09:00","Libertas Livorno – Baloncesto Firenze Bianca",true],["11:30","Baloncesto Firenze Bianca – BSL San Lazzaro",false],["14:15","BSL San Lazzaro – Libertas Livorno",true]],
+   percorso:[["1ª","Palestra King","1°-8° posto"],["2ª","Palestra Buontalenti","9°-16° posto"],["3ª","Palestra Marco Polo","17°-24° posto"]],
+   finali:[["1°-2°","12:00","King"],["3°-4°","10:30","King"],["5°-6°","9:00","King"],["7°-8°","11:00","Buontalenti"],["9°-10°","9:45","Buontalenti"],["11°-12°","8:30","Buontalenti"],["13°-14°","11:00","Marco Polo"],["15°-16°","9:45","Marco Polo"],["17°-18°","8:30","Marco Polo"],["19°-20°","11:00","Ambrosoli"],["21°-22°","9:45","Ambrosoli"],["23°-24°","8:30","Ambrosoli"]]
+  }},
+ {nome:"Torneo di Natale · Memorial Paolo Calviani", periodo:"27-29 dicembre 2026", luogo:"Terranuova Bracciolini (AR)", info:"Programma 2026 non ancora pubblicato dagli organizzatori (l'ultima edizione è stata la 34ª, nel 2025)."}
+];
+var TORNEI_STORICO = [
+ {nome:"Trofeo Mantovani", periodo:"8 dicembre 2025", luogo:"Palestra Gemini, Livorno", risultato:"1° posto", top:true},
+ {nome:"Befana Cup", periodo:"Gennaio 2026", luogo:"Firenze", risultato:"2° posto"},
+ {nome:"Torneo di Volterra", periodo:"Stagione 2025/26", luogo:"Volterra (PI)", risultato:"Finalista"},
+ {nome:"Torneo di San Miniato", periodo:"Stagione 2025/26", luogo:"San Miniato (PI)", risultato:"1° posto", top:true},
+ {nome:"Torneo Sancat", periodo:"Stagione 2025/26", luogo:"Firenze", risultato:"7° posto"},
+ {nome:"Quadrangolare di Via Pera", periodo:"Giugno 2026", luogo:"Palestra Via Pera, Livorno", risultato:"1° posto", top:true}
+];
+var TORNEI_2015=[];
+/* ====== PHILOS DR3 (generato da tools/build_philos.py, dati fip.it + referti) ====== */
+var PH_SQUADRE={PH:"Philos Livorno",
+ Q01:"Perignano",
+ Q02:"Basket Pomarance",
+ Q03:"CUS Pisa",
+ Q04:"Dream Basket Pisa",
+ Q05:"Fortezza Basket Livorno",
+ Q06:"GMV Basket",
+ Q07:"Pol. Nicola Chimenti",
+ Q08:"Vicopisano Basket"};
+var PH_CAMPI={H01:"PALESTRA DE GUBERNATIS, Via Cecconi 40, Livorno",
+ H02:"PALESTRA, Via Gallerone, Pomarance",
+ H03:"Pal. Comunale, Via Sartori, 28, San Giuliano Terme",
+ H04:"Pal. Sport Vicopisano, Viale Diaz ang. P.za Ferrucci, Vicopisano",
+ H05:"Paladream Rosso, Via Gioacchino Belli 1, Pisa",
+ H06:"Palestra 'G.D'Alesio'(Gemini), Via Oberdan Chiesa,66, Livorno",
+ H07:"Palestra Alta Impianti G. Sig, Via Betti snc, Pisa",
+ H08:"Palestra Comunale Ciurli Carde, Via Antica Pontederese, Casciana Terme Lari",
+ H09:"Palestra Via Pera, Via Pera 20, Livorno"};
+var PH_RAW=[
+"008187|P|2026-10-30|21:15|PH|Q01|98|30|H09|A1",
+"008188|P|2026-11-01|18:00|Q02|Q05|59|68|H02|A1",
+"008186|P|2026-11-01|20:00|Q04|Q03|58|61|H05|A1",
+"008185|P|2026-11-03|21:30|Q07|Q06|78|65|H01|A1",
+"008189|P|2026-11-07|20:30|Q01|Q02|63|74|H08|A2",
+"008191|P|2026-11-08|19:30|Q05|Q07|51|52|H06|A2",
+"008195|P|2026-11-13|21:15|PH|Q04|79|62|H09|A3",
+"008193|P|2026-11-17|21:30|Q07|Q01|90|31|H01|A3",
+"008200|P|2026-11-21|20:30|Q01|Q08|46|83|H08|A4",
+"008199|P|2026-11-21|21:00|Q05|Q06|71|59|H06|A4",
+"008198|P|2026-11-22|20:30|Q03|Q07|60|56|H03|A4",
+"008190|P|2026-11-24|21:15|PH|Q03|89|42|H09|A2",
+"008196|P|2026-11-26|21:15|Q08|Q05|||H04|A3",
+"008197|P|2026-11-27|20:15|Q04|Q02|||H07|A4",
+"008194|P|2026-11-29|18:00|Q02|Q03|||H02|A3",
+"008202|P|2026-11-29|20:00|Q06|Q01|||H03|A5",
+"008204|P|2026-12-01|21:30|Q07|Q04|||H01|A5",
+"008220|P|2026-12-02|21:15|Q05|PH|||H06|A9",
+"008201|P|2026-12-03|21:15|Q08|Q03|||H04|A5",
+"008207|P|2026-12-04|21:15|PH|Q07|||H09|A6",
+"008208|P|2026-12-05|20:30|Q01|Q05|||H08|A6",
+"008206|P|2026-12-05|21:00|Q03|Q06|||H03|A6",
+"008205|P|2026-12-06|17:45|Q04|Q08|||H05|A6",
+"008192|P|2026-12-09|21:15|Q06|Q08|||H03|A2",
+"008203|P|2026-12-10|20:30|Q02|PH|||H02|A5",
+"008210|P|2026-12-12|19:00|Q05|Q03|||H06|A7",
+"008211|P|2026-12-13|20:00|Q06|Q04|||H03|A7",
+"008209|P|2026-12-15|20:30|Q08|PH|||H04|A7",
+"008212|P|2026-12-15|21:30|Q07|Q02|||H01|A7",
+"008217|P|2026-12-16|21:15|Q01|Q04|||H08|A9",
+"008214|P|2026-12-18|21:15|PH|Q06|||H09|A8",
+"008213|P|2026-12-19|20:30|Q03|Q01|||H03|A8",
+"008216|P|2026-12-19|20:30|Q02|Q08|||H02|A8",
+"008215|P|2026-12-20|16:30|Q04|Q05|||H05|A8",
+"008222|P|2027-01-06|18:00|Q03|Q04|||H03|R1",
+"008223|P|2027-01-07|20:30|Q01|PH|||H08|R1",
+"008218|P|2027-01-07|21:15|Q08|Q07|||H04|A9",
+"008224|P|2027-01-07|21:15|Q05|Q02|||H06|R1",
+"008228|P|2027-01-10|19:00|Q02|Q01|||H02|R2",
+"008221|P|2027-01-10|21:00|Q06|Q07|||H03|R1",
+"008227|P|2027-01-12|21:30|Q07|Q05|||H01|R2",
+"008225|P|2027-01-14|21:15|Q08|Q06|||H04|R2",
+"008230|P|2027-01-15|20:15|Q04|PH|||H07|R3",
+"008229|P|2027-01-16|20:30|Q01|Q07|||H08|R3",
+"008231|P|2027-01-17|20:00|Q03|Q02|||H03|R3",
+"008232|P|2027-01-19|21:15|Q05|Q08|||H06|R3",
+"008219|P|2027-01-20|21:15|Q06|Q02|||H03|A9",
+"008236|P|2027-01-23|18:30|Q02|Q04|||H02|R4",
+"008226|P|2027-01-23|21:30|Q03|PH|||H03|R2",
+"008234|P|2027-01-24|20:00|Q06|Q05|||H03|R4",
+"008233|P|2027-01-26|21:30|Q07|Q03|||H01|R4",
+"008235|P|2027-01-28|21:15|Q08|Q01|||H04|R4",
+"008240|P|2027-01-29|21:15|PH|Q02|||H09|R5",
+"008239|P|2027-01-30|21:00|Q01|Q06|||H08|R5",
+"008237|P|2027-01-31|20:00|Q04|Q07|||H05|R5",
+"008238|P|2027-01-31|20:30|Q03|Q08|||H03|R5",
+"008248|P|2027-02-05|21:15|PH|Q08|||H09|R7",
+"008241|P|2027-02-07|19:30|Q05|Q01|||H06|R6",
+"008244|P|2027-02-09|20:30|Q08|Q04|||H04|R6",
+"008242|P|2027-02-09|21:30|Q07|PH|||H01|R6",
+"008243|P|2027-02-10|21:15|Q06|Q03|||H03|R6",
+"008245|P|2027-02-14|17:30|Q04|Q06|||H05|R7",
+"008246|P|2027-02-14|18:00|Q02|Q07|||H02|R7",
+"008247|P|2027-02-14|20:30|Q03|Q05|||H03|R7",
+"008252|P|2027-02-18|21:15|Q08|Q02|||H04|R8",
+"008251|P|2027-02-21|18:30|Q01|Q03|||H08|R8",
+"008250|P|2027-02-21|19:30|Q05|Q04|||H06|R8",
+"008255|P|2027-02-23|21:30|Q07|Q08|||H01|R9",
+"008249|P|2027-02-24|21:15|Q06|PH|||H03|R8",
+"008254|P|2027-02-26|21:15|PH|Q05|||H09|R9",
+"008256|P|2027-02-27|20:45|Q04|Q01|||H05|R9",
+"008253|P|2027-02-28|20:30|Q02|Q06|||H02|R9"
+];
+var PH_STATS=[];
+Object.keys(PH_SQUADRE).forEach(function(k){SQUADRE[k]=PH_SQUADRE[k]});
+Object.keys(PH_CAMPI).forEach(function(k){CAMPI[k]=PH_CAMPI[k]});
+GIRONI.P={nome:"Philos DR3",anno:"",girone:"DR3 Toscana \u00b7 Girone B",url:"https://fip.it/risultati/?group=campionati-regionali&regione_codice=TO&comitato_codice=RTO&sesso=M&codice_campionato=1DM&codice_fase=1&codice_girone=85903"};
+RAW=RAW.concat(PH_RAW);
+/* ====== FINE DATI ====== */
+
+var P=RAW.concat(TORNEO).map(function(s){var a=s.split("|");return{gara:a[0],c:a[1],data:a[2],ora:a[3],casa:a[4],osp:a[5],pc:a[6]===""?null:+a[6],po:a[7]===""?null:+a[7],campo:a[8],g:a[9]}});
+var S={filter:"lib"};
+try{var f0=localStorage.getItem("philos-filter");if(f0&&["lib","aq","es","ph","girone"].indexOf(f0)>=0)S.filter=f0}catch(e){}
+var MESI=["gen","feb","mar","apr","mag","giu","lug","ago","set","ott","nov","dic"];
+var MESI_L=["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"];
+var GIORNI=["dom","lun","mar","mer","gio","ven","sab"];
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function pad(n){return String(n).padStart(2,"0")}
+function todayISO(){var d=new Date();return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())}
+function parts(iso){var d=new Date(iso+"T12:00:00");return{g:d.getDate(),m:d.getMonth(),y:d.getFullYear(),wd:GIORNI[d.getDay()]}}
+function lungo(iso){var p=parts(iso);return p.g+" "+MESI_L[p.m]+" "+p.y}
+function us(k){return k==="LI"||k==="PH"}
+function isLib(p){return us(p.casa)||us(p.osp)}
+function played(p){return p.pc!==null&&p.po!==null}
+function sortP(a,b){return a.data.localeCompare(b.data)||a.ora.localeCompare(b.ora)}
+function gior(g){if(!/^[AR]\d+$/.test(g))return g;return (g.charAt(0)==="A"?"andata ":"ritorno ")+g.slice(1)}
+/* doppio impegno = nello stesso giorno giocano sia gli Esordienti (E) sia gli Aquilotti (A o torneo T); più partite della stessa categoria non contano */
+var DOPPIE={};P.filter(isLib).forEach(function(p){var k=p.c==="E"?"E":p.c==="P"?"P":"A";DOPPIE[p.data]=DOPPIE[p.data]||{};DOPPIE[p.data][k]=1});
+Object.keys(DOPPIE).forEach(function(d){DOPPIE[d]=Object.keys(DOPPIE[d]).length});
+
+function row(p,mode){var pr=parts(p.data),t=todayISO(),sc;
+  if(played(p)){var cls="",lab="";
+    if(isLib(p)){var a=us(p.casa)?p.pc:p.po,b=us(p.casa)?p.po:p.pc;cls=a>b?"w":a<b?"l":"";lab=a>b?"vinta":a<b?"persa":"pari"}
+    sc='<div class="score '+cls+'">'+p.pc+"-"+p.po+(lab?"<small>"+lab+"</small>":"")+"</div>"}
+  else if(p.data<t)sc='<div class="score wait">risultato in attesa</div>';
+  else sc='<div class="score todo">'+esc(p.ora)+"</div>";
+  var bd=p.c==="T"?'<span class="badge tor">Torneo</span><span class="badge aq">Aquilotti Big</span>':'<span class="badge '+(p.c==="A"?"aq":p.c==="P"?"ph":"")+'">'+GIRONI[p.c].nome+"</span>";
+  if(p.data===t)bd+='<span class="badge today">oggi</span>';
+  if(mode==="cal"&&isLib(p)&&DOPPIE[p.data]>1)bd+='<span class="badge dbl">doppio impegno</span>';
+  return '<div class="row"><div class="date"><span>'+pr.wd+"</span><b>"+pr.g+"</b><span>"+MESI[pr.m]+"</span></div>"+
+   '<div class="teams"><span class="t '+(p.casa==="LI"?"lib":p.casa==="PH"?"ph":"")+'">'+esc(SQUADRE[p.casa])+'</span><span class="t '+(p.osp==="LI"?"lib":p.osp==="PH"?"ph":"")+'">'+esc(SQUADRE[p.osp])+"</span>"+
+   '<span class="meta">'+bd+"<span>"+gior(p.g)+"</span></span>"+
+   (mode==="cal"?'<span class="where">'+esc(CAMPI[p.campo])+"</span>":"")+"</div>"+sc+"</div>"}
+
+function vPartite(mode){var f=S.filter,t=todayISO();
+  var ps=P.filter(function(p){if(f==="aq")return (p.c==="A"||p.c==="T")&&isLib(p);if(f==="es")return p.c==="E"&&isLib(p);if(f==="ph")return p.c==="P"&&isLib(p);if(f==="lib")return isLib(p);return true});
+  var list=mode==="cal"?ps.filter(function(p){return !played(p)&&p.data>=t}).sort(sortP)
+                       :ps.filter(function(p){return played(p)||p.data<t}).sort(sortP).reverse();
+  var h="",cur="";
+  list.forEach(function(p){var pr=parts(p.data),k=MESI_L[pr.m]+" "+pr.y;if(k!==cur){cur=k;h+='<div class="month">'+k+"</div>"}h+=row(p,mode)});
+  function fb(v,l){return '<button data-filter="'+v+'" aria-pressed="'+(f===v)+'">'+l+"</button>"}
+  var nota=f==="girone"?"Tutte le partite dei tre gironi, comprese quelle tra le altre squadre."
+    :mode==="cal"&&f==="lib"?"«Doppio impegno» segnala i giorni in cui giocano almeno due tra Esordienti 2015, Aquilotti Big 2016 (anche a un torneo) e Philos. Più partite della stessa squadra nello stesso giorno non sono un doppio impegno. Le partite «Torneo» non contano in classifica.":"";
+  return "<section><h2>"+(mode==="cal"?"Calendario":"Risultati")+"</h2>"+
+   '<div class="filters">'+fb("lib","Tutti")+fb("aq","Aquilotti Big")+fb("es","Esordienti")+fb("ph","Philos")+fb("girone","Tutto il girone")+"</div>"+
+   '<div class="card list">'+(h||'<div class="empty">'+(mode==="cal"?"Nessuna partita da giocare con questo filtro.":"Nessun risultato con questo filtro.")+"</div>")+"</div>"+
+   (nota?'<p class="note">'+nota+"</p>":"")+"</section>"}
+
+function classifica(c){var T={};
+  P.filter(function(p){return p.c===c}).forEach(function(p){[p.casa,p.osp].forEach(function(k){if(!T[k])T[k]={k:k,g:0,v:0,p:0,pt:0}});
+    if(!played(p))return;var h=T[p.casa],o=T[p.osp];h.g++;o.g++;
+    if(p.pc>p.po){h.v++;h.pt+=2;o.p++}else if(p.po>p.pc){o.v++;o.pt+=2;h.p++}else{h.pt++;o.pt++}});
+  return Object.keys(T).map(function(k){return T[k]}).sort(function(a,b){return b.pt-a.pt||a.p-b.p||b.v-a.v||SQUADRE[a.k].localeCompare(SQUADRE[b.k])})}
+
+function vClass(){return ["P","A","E"].map(function(c){var G=GIRONI[c],r=classifica(c);
+  return '<section><div class="card"><div class="tabhead"><b>'+(G.nome+" "+G.anno).trim()+'</b><span class="note">'+G.girone+"</span></div>"+
+  '<div class="tablewrap"><table><thead><tr><th>#</th><th>Squadra</th><th>Pt</th><th>G</th><th>V</th><th>P</th></tr></thead><tbody>'+
+  r.map(function(x,i){return '<tr class="'+(us(x.k)?"lib":"")+'"><td>'+(i+1)+"</td><td>"+esc(SQUADRE[x.k])+"</td><td>"+x.pt+"</td><td>"+x.g+"</td><td>"+x.v+"</td><td>"+x.p+"</td></tr>"}).join("")+
+  '</tbody></table></div><p class="note tabfoot">2 punti a vittoria, calcolata sui risultati inseriti. <a href="'+esc(G.url)+'" target="_blank" rel="noopener">Pagina FIP</a></p></div></section>'}).join("")}
+
+function torCard(t){return '<div class="card tor"><div class="line"><span class="badge '+(t.risultato?"":"aq")+'">'+esc(t.periodo)+'</span></div><b>'+esc(t.nome)+'</b><span class="note">'+esc(t.luogo)+'</span>'+
+  (t.formula?'<span class="note">'+esc(t.formula)+'</span>':"")+
+  (t.risultato?'<span class="line">'+(t.top?'<span class="badge gold">🏆</span>':"")+'<span class="res">'+esc(t.risultato)+'</span></span>':"")+
+  (t.dettaglio?'<span class="note">'+esc(t.dettaglio)+'</span>':"")+(t.info?'<span class="note">'+esc(t.info)+'</span>':"")+'</div>'}
+function tbl(rows,head,libf){return '<div class="tablewrap"><table>'+(head?'<thead><tr>'+head.map(function(x){return "<th>"+esc(x)+"</th>"}).join("")+'</tr></thead>':"")+'<tbody>'+
+  rows.map(function(r){return '<tr class="'+(libf&&libf(r)?"lib":"")+'">'+r.filter(function(x){return typeof x!=="boolean"}).map(function(x){return "<td>"+esc(x)+"</td>"}).join("")+'</tr>'}).join("")+'</tbody></table></div>'}
+function progCard(t){var g=t.prog;return '<div class="card tor"><div class="line"><span class="badge aq">'+esc(t.periodo)+'</span></div><b>'+esc(t.nome)+'</b><span class="note">'+esc(t.luogo)+'</span>'+
+  '<h3>Girone Cometa 🌟 · domenica 6 dicembre · Palestra Marco Polo</h3>'+tbl(g.girone,null,function(r){return r[2]})+
+  '<span class="note">Nel minibasket conta il numero di tempini vinti. La classifica del girone decide il percorso di lunedì e martedì.</span>'+
+  '<h3>Quarti e semifinali · lunedì 7 dicembre</h3><span class="note">Quarti alle 11:15 contro la pari classificata del Girone Renna 🦌 (Don Bosco Livorno, Pino Basket Firenze, Virtus Basket Binasco). Semifinali nella stessa palestra: alle 16:30 se si vince il quarto, alle 15:15 se si perde.</span>'+
+  tbl(g.percorso,["Nel girone","Palestra","Si gioca per"])+
+  '<h3>Finali · martedì 8 dicembre</h3>'+tbl(g.finali,["Posto","Ora","Palestra"])+
+  '<span class="note">Premiazioni martedì 8/12 alle 13:00 alla King. Lunedì 7/12 dalle 14:30 alle 15:00, sempre alla King, c\'è la Food &amp; Hoop Challenge.</span>'+
+  '<h3>Regole</h3><ul>'+g.formula.map(function(x){return "<li>"+esc(x)+"</li>"}).join("")+'</ul>'+
+  '<h3>Tutti i gironi</h3>'+tbl(g.gironi,null,function(r){return /Cometa/.test(r[0])})+'</div>'}
+function vTornei(){return '<section><h2>Aquilotti Big 2016 · in programma 2026/27</h2>'+TORNEI_PROGRAMMA.map(function(t){return t.prog?progCard(t):torCard(t)}).join("")+
+  '<p class="note">Le partite dei tornei sono anche nel Calendario, segnate «Torneo». Non contano in classifica.</p></section>'+
+  '<section><h2>Aquilotti Big 2016 · stagione 2025/26</h2>'+TORNEI_STORICO.map(torCard).join("")+'</section>'+
+  '<section><h2>Esordienti 2015</h2>'+(TORNEI_2015.length?TORNEI_2015.map(torCard).join(""):'<div class="card"><div class="empty">Nessun torneo in programma per ora.</div></div>')+'</section>'}
+
+function vPhilos(){var G=GIRONI.P,r=classifica("P"),pos=0,me=null;
+  r.forEach(function(x,i){if(x.k==="PH"){pos=i+1;me=x}});
+  var gare={};P.forEach(function(p){if(p.c==="P")gare[p.gara]=p});
+  var h='<section><h2>Philos Livorno · DR3</h2><div class="card"><div class="tabhead"><b>'+(me?pos+'° posto':'')+'</b><span class="note">'+esc(G.girone)+'</span></div>'+
+    '<p class="note tabfoot">'+(me?me.g+' partite · '+me.v+' vinte · '+me.p+' perse · '+me.pt+' punti in classifica':'')+'</p></div></section>';
+  var T={},list=PH_STATS.filter(function(s){return gare[s.gara]}).sort(function(a,b){return sortP(gare[b.gara],gare[a.gara])});
+  list.forEach(function(s){Object.keys(s.punti).forEach(function(n){var v=s.punti[n];if(!T[n])T[n]={n:n,pg:0,tot:0,max:0};T[n].pg++;T[n].tot+=v;if(v>T[n].max)T[n].max=v})});
+  var gioc=Object.keys(T).map(function(k){return T[k]}).sort(function(a,b){return b.tot-a.tot||b.tot/b.pg-a.tot/a.pg||a.n.localeCompare(b.n)});
+  if(!list.length){return h+'<section><h2>Punti dei giocatori</h2><div class="card"><div class="empty">Le statistiche arrivano dai referti e vengono inserite dopo ogni partita. Per ora non ce ne sono.</div></div></section>'}
+  h+='<section><h2>Punti dei giocatori · totali</h2><div class="card"><div class="tablewrap"><table><thead><tr><th>#</th><th>Giocatore</th><th>Punti</th><th>Partite</th><th>Media</th><th>Max</th></tr></thead><tbody>'+
+    gioc.map(function(x,i){return '<tr><td>'+(i+1)+'</td><td>'+esc(x.n)+'</td><td><b>'+x.tot+'</b></td><td>'+x.pg+'</td><td>'+(x.tot/x.pg).toFixed(1).replace(".",",")+'</td><td>'+x.max+'</td></tr>'}).join("")+
+    '</tbody></table></div><p class="note tabfoot">Calcolati su '+list.length+(list.length===1?' partita':' partite')+' con il referto inserito. Partite = partite in cui il giocatore è entrato in campo.</p></div></section>';
+  h+='<section><h2>Partita per partita</h2>'+list.map(function(s){var p=gare[s.gara],pr=parts(p.data),casa=p.casa==="PH",avv=casa?p.osp:p.casa;
+    var a=casa?p.pc:p.po,b=casa?p.po:p.pc,ris=played(p)?'<span class="badge '+(a>b?"ph":"")+'">'+(a>b?"vinta ":a<b?"persa ":"")+a+'-'+b+'</span>':'';
+    var righe=Object.keys(s.punti).map(function(n){return [n,s.punti[n]]}).sort(function(x,y){return y[1]-x[1]||x[0].localeCompare(y[0])});
+    var somma=righe.reduce(function(t,x){return t+x[1]},0);
+    return '<div class="card tor"><div class="line">'+ris+'<span class="note">'+pr.wd+' '+pr.g+' '+MESI[pr.m]+' · '+(casa?'in casa':'fuori')+' · '+gior(p.g)+'</span></div><b>'+esc(SQUADRE[avv])+'</b>'+
+      tbl(righe.map(function(x){return [x[0],String(x[1])]}),["Giocatore","Punti"])+
+      (played(p)&&somma!==a?'<span class="note">Somma dei punti del referto: '+somma+' (punteggio FIP: '+a+')</span>':'')+'</div>'}).join("")+'</section>';
+  return h}
+
+function route(){var v=(location.hash||"#calendario").slice(1);return ["calendario","risultati","classifiche","tornei","philos"].indexOf(v)>=0?v:"calendario"}
+function render(){var v=route();
+  Array.prototype.forEach.call(document.querySelectorAll("nav.tabs a"),function(a){a.setAttribute("aria-current",a.dataset.v===v?"page":"false")});
+  var h=v==="calendario"?vPartite("cal"):v==="risultati"?vPartite("ris"):v==="tornei"?vTornei():v==="philos"?vPhilos():vClass();
+  h+="<footer>Aggiornato al "+lungo(AGGIORNATO)+" · dati FIP Toscana, organizzatori dei tornei e referti Philos. Gli ultimi risultati possono essere in attesa di conferma ufficiale.</footer>";
+  document.getElementById("view").innerHTML=h}
+document.addEventListener("click",function(e){var t=e.target.closest("[data-filter]");if(!t)return;S.filter=t.dataset.filter;try{localStorage.setItem("philos-filter",S.filter)}catch(e){}render()});
+window.addEventListener("hashchange",function(){render();window.scrollTo(0,0)});
+render();
+})();
+</script>
+<script data-goatcounter="https://mainardi.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

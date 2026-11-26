@@ -1,0 +1,4 @@
+{
+"_come_si_compila": "Una voce in 'partite' per ogni gara del Philos: 'gara' = numero gara FIP (6 cifre, lo trovi in tools/dr3.json), 'punti' = punti di ogni giocatore entrato in campo (anche 0). Chi non e' entrato non va messo. I nomi vanno scritti sempre uguali in tutte le partite.",
+"partite": []
+}
