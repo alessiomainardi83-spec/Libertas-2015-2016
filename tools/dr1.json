@@ -1996,10 +1996,10 @@
 "ora": "21:15",
 "casa": "VALMEC SM SRL SEI ROSE",
 "ospite": "JUVE PONTEDERA",
-"pt_casa": null,
-"pt_ospite": null,
+"pt_casa": 60,
+"pt_ospite": 78,
 "campo": "TENSOSTRUTTURA ROSIGNANO, Via Borsellino 57013 ROSIGNANO MARITTIMO(LI)",
-"stato": "Gara designata: la designazione è visibile"
+"stato": "Risultato ufficioso"
 },
 {
 "gara": "000500",
