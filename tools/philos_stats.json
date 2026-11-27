@@ -1,4 +1,55 @@
 {
-"_come_si_compila": "Una voce in 'partite' per ogni gara del Philos: 'gara' = numero gara FIP (6 cifre, lo trovi in tools/dr3.json), 'punti' = punti di ogni giocatore entrato in campo (anche 0). Chi non e' entrato non va messo. I nomi vanno scritti sempre uguali in tutte le partite.",
-"partite": []
+ "_come_si_compila": "Una voce in 'partite' per ogni gara del Philos: 'gara' = numero gara FIP (6 cifre, lo trovi in tools/dr3.json), 'punti' = punti di ogni giocatore entrato in campo (anche 0). Chi non e' entrato non va messo. I nomi vanno scritti sempre uguali in tutte le partite.",
+ "partite": [
+  {
+   "gara": "008187",
+   "punti": {
+    "Odagwe K.": 4,
+    "Pagni F.": 9,
+    "Pappalardo D.": 7,
+    "Radaelli M.": 0,
+    "Van der Spek A.": 13,
+    "Prima D.": 8,
+    "Perasso A.": 10,
+    "Ciotti E.": 4,
+    "Borri N.": 9,
+    "Mannucci G.": 6,
+    "Bernardo M.": 20,
+    "D'Attilio E.": 8
+   }
+  },
+  {
+   "gara": "008195",
+   "punti": {
+    "Odagwe K.": 5,
+    "Barbara E.": 0,
+    "Pappalardo D.": 13,
+    "Pardini F.": 2,
+    "Radaelli M.": 3,
+    "Van der Spek A.": 16,
+    "Perasso A.": 10,
+    "Borri N.": 11,
+    "Mannucci G.": 3,
+    "Bernardo M.": 4,
+    "D'Attilio E.": 12
+   }
+  },
+  {
+   "gara": "008190",
+   "punti": {
+    "Odagwe K.": 12,
+    "Pagni F.": 5,
+    "Pappalardo D.": 10,
+    "Pardini F.": 4,
+    "Radaelli M.": 7,
+    "Van der Spek A.": 11,
+    "Prima D.": 2,
+    "Perasso A.": 10,
+    "Ciotti E.": 0,
+    "Borri N.": 6,
+    "Mannucci G.": 4,
+    "D'Attilio E.": 18
+   }
+  }
+ ]
 }
