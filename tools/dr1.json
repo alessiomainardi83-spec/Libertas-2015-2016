@@ -1997,9 +1997,9 @@
 "casa": "VALMEC SM SRL SEI ROSE",
 "ospite": "JUVE PONTEDERA",
 "pt_casa": 60,
-"pt_ospite": 78,
+"pt_ospite": 79,
 "campo": "TENSOSTRUTTURA ROSIGNANO, Via Borsellino 57013 ROSIGNANO MARITTIMO(LI)",
-"stato": "Risultato ufficioso"
+"stato": ""
 },
 {
 "gara": "000500",
@@ -2116,7 +2116,7 @@
 "pt_casa": 75,
 "pt_ospite": 73,
 "campo": "PALATAGLIATE, VIA DELLE TAGLIATE SECONDA, 84 55100 LUCCA(LU)",
-"stato": "Risultato ufficioso"
+"stato": ""
 },
 {
 "gara": "000513",
@@ -2474,7 +2474,7 @@
 "ar": 1,
 "giornata": 13,
 "data": "2026-12-19",
-"ora": "19:30",
+"ora": "18:30",
 "casa": "FORTEZZA BASKET",
 "ospite": "BASKET DONORATICO",
 "pt_casa": null,

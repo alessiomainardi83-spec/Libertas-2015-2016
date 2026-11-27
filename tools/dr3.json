@@ -605,10 +605,10 @@
 "ora": "21:15",
 "casa": "VICOPISANO BASKET 2011",
 "ospite": "FORTEZZA BASKET",
-"pt_casa": null,
-"pt_ospite": null,
+"pt_casa": 51,
+"pt_ospite": 63,
 "campo": "Pal. Sport Vicopisano, Viale Diaz ang. P.za Ferrucci 56010 VICOPISANO(PI)",
-"stato": "Gara designata: la designazione è visibile"
+"stato": "Risultato ufficioso"
 },
 {
 "gara": "008194",
@@ -764,7 +764,7 @@
 "pt_casa": null,
 "pt_ospite": null,
 "campo": "Palestra Comunale Ciurli Carde, Via Antica Pontederese 56034 CASCIANA TERME LARI(PI)",
-"stato": "Gara non ancora designata"
+"stato": "Gara designata: la designazione non è ancora visibile"
 },
 {
 "gara": "008205",
@@ -803,7 +803,7 @@
 "pt_casa": null,
 "pt_ospite": null,
 "campo": "Pal. Comunale, Via Sartori, 28 56010 SAN GIULIANO TERME(PI)",
-"stato": "Gara non ancora designata"
+"stato": "Gara designata: la designazione non è ancora visibile"
 },
 {
 "gara": "008209",
