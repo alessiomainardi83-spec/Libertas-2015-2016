@@ -670,10 +670,10 @@
 "ora": "20:15",
 "casa": "DREAM BASKET PISA",
 "ospite": "BASKET POMARANCE",
-"pt_casa": null,
-"pt_ospite": null,
+"pt_casa": 56,
+"pt_ospite": 59,
 "campo": "Palestra Alta Impianti їG. Sig, Via Betti snc 56140 PISA(PI)",
-"stato": "Gara designata: la designazione è visibile"
+"stato": "Risultato ufficioso"
 },
 {
 "gara": "008202",
@@ -894,7 +894,7 @@
 "pt_casa": null,
 "pt_ospite": null,
 "campo": "Palestra 'G.D'Alesio'(Gemini), Via Oberdan Chiesa,66 57124 LIVORNO(LI)",
-"stato": "Gara designata: la designazione non è ancora visibile"
+"stato": "Gara designata: la designazione è visibile"
 },
 {
 "gara": "008217",
